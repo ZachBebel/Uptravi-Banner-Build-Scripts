@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Uptravi Global MS Banners</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <style>
+        iframe {
+            border: 0;
+            -webkit-box-sizing: content-box;
+            -moz-box-sizing: content-box;
+            box-sizing: content-box;
+        }
+        
+        .hide {
+            display: none;
+        }
+        
+        .form-control {
+            display: inline-block;
+            width: 200px;
+            margin: 15px 15px 20px 0;
+        }
+        
+        .right {
+            margin-left: 428px;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Uptravi Global MS Banners <span class="code">iTrack</span></h2>
+
+    <select class="form-control form-code">
+        <option value="_iTrack">iTrack</option>
+        <option value="_zinc">Zinc</option>
+    </select>
+
+    <select class="form-control form-banner hide">
+        <option value="look_long_term">Look Long Term</option>
+        <option value="more_is_possible">More is Possible</option>
+        <option value="power_of_three">Power of Three</option>
+        <option value="think_sooner">Think Sooner</option>
+    </select>
+
+    <select class="form-control form-type">
+        <option value="dynamic">Dynamic</option>
+        <option value="mobile">Mobile</option>
+        <option value="static">Static</option>
+        <option value="site_takeover">Site Takeover</option>
+    </select>
+
+    <select class="form-control form-size">
+        <option value="120x600">120x600</option>
+        <option value="160x600">160x600</option>
+        <option value="300x50">300x50</option>
+        <option value="300x250">300x250</option>
+        <option value="300x600">300x600</option>
+        <option value="320x50">320x50</option>
+        <option value="468x60">468x60</option>
+        <option value="728x90">728x90</option>
+    </select>
+
+    <div role="tabpanel">
+
+
+
+        <ul class="nav nav-tabs" role="tablist" style="width: 100%;">
+
+            <!-- Types -->
+
+            <li class="show">
+                <a href="#tab1" aria-controls="tab1" role="tab" data-toggle="tab">
+                    Look Long Term 160x600 Dynamic
+                </a>
+            </li>
+            <li class="show active">
+                <a href="#tab2" aria-controls="tab2" role="tab" data-toggle="tab">
+                    More is Possible 160x600 Dynamic
+                </a>
+            </li>
+            <li class="show">
+                <a href="#tab3" aria-controls="tab3" role="tab" data-toggle="tab">
+                    Power of Three 160x600 Dynamic
+                </a>
+            </li>
+            <li class="show">
+                <a href="#tab4" aria-controls="tab4" role="tab" data-toggle="tab">
+                    Think Sooner 160x600 Dynamic
+                </a>
+            </li>
+
+            <!-- Sizes - ->
+
+            <li class="hide">
+                <a href="#tab5" aria-controls="tab5" role="tab" data-toggle="tab">
+                    Look Long Term 160x600 Dynamic
+                </a>
+            </li>
+            <li class="hide">
+                <a href="#tab6" aria-controls="tab6" role="tab" data-toggle="tab">
+                    Look Long Term 160x600 Dynamic
+                </a>
+            </li>
+            -->
+
+        </ul>
+
+
+
+        <div class="tab-content">
+
+            <!-- Types -->
+
+            <div role="tabpanel" class="tab-pane active" id="tab1">
+                <iframe src="look_long_term/dynamic/160x600/_iTrack/index.html" style="width:160px; height:600px;"></iframe>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="tab2">
+                <iframe src="more_is_possible/dynamic/160x600/_iTrack/index.html" style="width:160px; height:600px;"></iframe>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="tab3">
+                <iframe src="power_of_three/dynamic/160x600/_iTrack/index.html" style="width:160px; height:600px;"></iframe>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="tab4">
+                <iframe src="think_sooner/dynamic/160x600/_iTrack/index.html" style="width:160px; height:600px;"></iframe>
+            </div>
+
+            <!-- Sizes - ->
+
+            <div role="tabpanel" class="tab-pane" id="tab5">
+                <iframe src="look_long_term/static/160x600/_iTrack/index.html" style="width:160px; height:600px;"></iframe>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="tab6">
+                <iframe src="more_is_possible/static/160x600/_iTrack/index.html" style="width:160px; height:600px;"></iframe>
+            </div>
+            -->
+
+        </div>
+
+
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js"></script>
+    <script type="text/javascript">
+        var clicked = false;
+
+        var banner = [
+            "look_long_term",
+            "more_is_possible",
+            "power_of_three",
+            "think_sooner"
+        ];
+        var type = [
+            'dynamic',
+            'mobile',
+            'static',
+            'site_takeover'
+        ];
+        var size = [
+            '120x600',
+            '160x600',
+            '300x250',
+            '300x600',
+            '468x60',
+            '728x90',
+            '300x50',
+            '320x50'
+        ];
+        var code = [
+            '_iTrack',
+            '_zinc'
+        ];
+
+        var combinations = {
+            _iTrack: {
+                look_long_term: {
+                    dynamic: {
+                        "120x600": {},
+                        "160x600": {},
+                        "300x250": {},
+                        "300x600": {},
+                        "468x60": {},
+                        "728x90": {}
+                    },
+                    mobile: {
+                        "300x50": {},
+                        "320x50": {}
+                    },
+                    static: {
+                        "120x600": {},
+                        "160x600": {},
+                        "300x250": {},
+                        "300x600": {},
+                        "468x60": {},
+                        "728x90": {}
+                    }
+                },
+                more_is_possible: {
+                    dynamic: {
+                        "120x600": {},
+                        "160x600": {},
+                        "300x250": {},
+                        "300x600": {},
+                        "468x60": {},
+                        "728x90": {}
+                    },
+                    mobile: {
+                        "300x50": {},
+                        "320x50": {}
+                    },
+                    static: {
+                        "120x600": {},
+                        "160x600": {},
+                        "300x250": {},
+                        "300x600": {},
+                        "468x60": {},
+                        "728x90": {}
+                    }
+                },
+                power_of_three: {
+                    dynamic: {
+                        "120x600": {},
+                        "160x600": {},
+                        "300x250": {},
+                        "300x600": {},
+                        "468x60": {},
+                        "728x90": {}
+                    },
+                    mobile: {
+                        "300x50": {},
+                        "320x50": {}
+                    },
+                    static: {
+                        "120x600": {},
+                        "160x600": {},
+                        "300x250": {},
+                        "300x600": {},
+                        "468x60": {},
+                        "728x90": {}
+                    },
+                    site_takeover: {
+                        "300x250": {},
+                        "300x600": {},
+                        "728x90": {}
+                    }
+                },
+                think_sooner: {
+                    dynamic: {
+                        "120x600": {},
+                        "160x600": {},
+                        "300x250": {},
+                        "300x600": {},
+                        "468x60": {},
+                        "728x90": {}
+                    },
+                    mobile: {
+                        "300x50": {},
+                        "320x50": {}
+                    },
+                    static: {
+                        "120x600": {},
+                        "160x600": {},
+                        "300x250": {},
+                        "300x600": {},
+                        "468x60": {},
+                        "728x90": {}
+                    }
+                }
+            },
+            _zinc: {
+                look_long_term: {
+                    dynamic: {
+                        "160x600": {},
+                        "300x250": {},
+                        "728x90": {}
+                    },
+                    static: {
+                        "160x600": {},
+                        "300x250": {},
+                        "728x90": {}
+                    }
+                },
+                more_is_possible: {
+                    dynamic: {
+                        "160x600": {},
+                        "300x250": {},
+                        "728x90": {}
+                    },
+                    static: {
+                        "160x600": {},
+                        "300x250": {},
+                        "728x90": {}
+                    }
+                },
+                power_of_three: {
+                    dynamic: {
+                        "160x600": {},
+                        "300x250": {},
+                        "728x90": {}
+                    },
+                    static: {
+                        "160x600": {},
+                        "300x250": {},
+                        "728x90": {}
+                    }
+                },
+                think_sooner: {
+                    dynamic: {
+                        "160x600": {},
+                        "300x250": {},
+                        "728x90": {}
+                    },
+                    static: {
+                        "160x600": {},
+                        "300x250": {},
+                        "728x90": {}
+                    }
+                }
+            }
+        };
+
+        //
+        // Whenever an option is clicked in any dropdown
+        //
+        $('.form-control').on("change", function (e) {
+
+            var b = banner[2],
+                t = $(".form-type").val(),
+                s = $(".form-size").val(),
+                c = $(".form-code").val(),
+                path,
+                typeChange = false,
+                sizeChange = false,
+                newType,
+                newSize,
+                bannerText,
+                typeText,
+                sizeText,
+                codeText,
+                dimensions,
+                powerOfThree = banner[2],
+                siteTakeover = type[3],
+                i = 0;
+
+            //
+            // Validate type dropdown list for correct options
+            //
+            for (var _t in type) {
+                if (!combinations[c][b][type[_t]]) {
+                    $(".form-type option[value=" + type[_t] + "]")
+                        .addClass("hide")
+                        .removeClass("show")
+                        .prop("disabled", true);
+                    if (t == type[_t]) typeChange = true;
+
+                } else {
+                    $(".form-type option[value=" + type[_t] + "]")
+                        .removeClass("hide")
+                        .addClass("show")
+                        .prop("disabled", false);
+                }
+            }
+
+            //
+            // If the new list does not contain the previously selected option, 
+            // Change the current option to the first one in the new list
+            //
+            if (typeChange) {
+                newType = $(".form-type option.show")[0].value;
+                $(".form-type").val(newType);
+                t = newType;
+            }
+
+            //
+            // Validate size dropdown list for correct options
+            //
+            for (var _s in size) {
+                if (!combinations[c][b][t][size[_s]]) {
+                    $(".form-size option[value=" + size[_s] + "]")
+                        .addClass("hide")
+                        .removeClass("show")
+                        .prop("disabled", true);
+                    if (s == size[_s]) sizeChange = true;
+                } else {
+                    $(".form-size option[value=" + size[_s] + "]")
+                        .removeClass("hide")
+                        .addClass("show")
+                        .prop("disabled", false);
+                }
+            }
+
+            //
+            // If the new list does not contain the previously selected option, 
+            // Change the current option to the first one in the new list
+            //
+            if (sizeChange) {
+                newSize = $(".form-size option.show")[0].value;
+                $(".form-size").val(newSize);
+                s = newSize;
+            }
+
+            //console.log(combinations[c][b][t][s]);
+
+            sizeText = $(".form-size option[value=" + s + "]").text();
+            typeText = $(".form-type option[value=" + t + "]").text();
+            codeText = $(".form-code option[value=" + c + "]").text();
+            dimensions = s.split("x");
+
+            //
+            // If not on Site Takeover, loop through and show one banner for each type
+            //
+            if (t != siteTakeover) {
+                for (i = 0; i < banner.length; i += 1) {
+
+                    //
+                    // Show tab if previously hidden
+                    //
+                    //if ($(".nav-tabs li:nth-child(" + (i + 1) + ")").hasClass("hide")) {
+                    $(".nav-tabs li:nth-child(" + (i + 1) + ")")
+                        .removeClass("hide")
+                        .addClass("show");
+                    $(".tab-content .tab-pane:nth-child(" + (i + 1) + ")")
+                        .removeClass("show")
+                        .removeClass("right");
+                    //}
+
+                    //
+                    // Change header text
+                    //
+                    $(".code").text(codeText);
+
+                    //
+                    // Change tab text
+                    //
+                    bannerText = $(".form-banner option[value=" + banner[i] + "]").text();
+
+                    $(".nav-tabs li:nth-child(" + (i + 1) + ") a").text(
+                        bannerText + " " +
+                        sizeText + " " +
+                        typeText
+                    );
+
+                    //
+                    // Change iframe source and resize
+                    //
+                    path = banner[i] + "/" + t + "/" + s + "/" + c + "/" + "index.html";
+                    //console.log(path);
+
+                    $(".tab-content .tab-pane:nth-child(" + (i + 1) + ") iframe")
+                        .attr("src", path)
+                        .width(dimensions[0])
+                        .height(dimensions[1]);
+
+                }
+            }
+
+            //
+            // If on Site Takeover, move all three size iframes to one page and display
+            //
+            else {
+
+                //
+                // Change path of first three tab panels and show
+                //
+
+                var stSizes = Object.keys(combinations[c][b][t]);
+                stSizes = [stSizes[2], stSizes[0], stSizes[1]];
+
+                for (i = 0; i < stSizes.length; i += 1) {
+
+                    s = stSizes[i];
+
+                    //
+                    // Change iframe source and resize
+                    //
+                    path = b + "/" + t + "/" + s + "/" + c + "/" + "index.html";
+                    //console.log(path);
+
+                    dimensions = s.split("x");
+
+                    $(".tab-content .tab-pane:nth-child(" + (i + 1) + ") iframe")
+                        .attr("src", path)
+                        .width(dimensions[0])
+                        .height(dimensions[1]);
+
+                    $(".tab-content .tab-pane:nth-child(" + (i + 1) + ")")
+                        .addClass("show");
+
+                    if (i > 0) {
+                        $(".tab-content .tab-pane:nth-child(" + (i + 1) + ")")
+                            .addClass("right");
+                    }
+                }
+
+                //
+                // Only show and update first tab for Site Takeover
+                //
+
+                // Hide all tabs
+                $(".nav-tabs li").each(function () {
+                    $(this)
+                        .addClass("hide")
+                        .removeClass("show");
+                });
+                $(".tab-content .tab-pane.active")
+                    .removeClass("active");
+
+                // Show first tab
+                bannerText = $(".form-banner option[value=" + powerOfThree + "]").text();
+                $(".nav-tabs li:nth-child(1)")
+                    .removeClass("hide")
+                    .addClass("show")
+                    .tab("show");
+                $(".nav-tabs li:nth-child(1) a").text(
+                    bannerText + " " +
+                    typeText
+                );
+                $(".tab-content .tab-pane:nth-child(1)")
+                    .addClass("active");
+
+            }
+
+        });
+
+        //console.log(Object.keys(banners)[0]);
+
+        $('.nav-tabs li a').on("click", function (e) {
+
+            e.preventDefault();
+
+            //reload all iFrames, because they are running in same namespace
+            //and therefore only one TweenLite instance is being used so
+            //the timeline never resets when you go from one tab to another.
+            if (clicked) {
+                $('iframe').each(function () {
+                    this.contentWindow.location.reload(true);
+                });
+            } else {
+                clicked = true;
+            }
+        });
+
+        // Switch tabs to ensure visibility on initial load
+        $(document).ready(function () {
+            $('.nav-tabs li:nth-child(1) a').click();
+        });
+    </script>
+
+</body>
+
+</html>

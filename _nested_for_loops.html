@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+</head>
+
+<body>
+    <script type="text/javascript">
+        window.onload = (function () {
+            //console.log("Works.");
+
+            var currentBanner = "";
+            var root = "./src/banner/"; // Starting from wherever Gruntfile.js is located
+            var build = {
+                banner: [
+                    'look_long_term',
+                    'more_is_possible',
+                    'power_of_three',
+                    'think_sooner'
+                ],
+                type: [
+                    'dynamic',
+                    'mobile',
+                    'static',
+                    'site_takeover'
+                ],
+                /*people: [
+                    'Jimmy',
+                    'John',
+                    'Jones'
+                ],*/
+                size: [
+                    '120x600',
+                    '160x600',
+                    '300x250',
+                    '300x600',
+                    '468x60',
+                    '728x90',
+                    '300x50',
+                    '320x50'
+                ],
+                code: [
+                    '_iTrack',
+                    '_zinc'
+                ],
+                /*prizes: [
+                    'Stuffed_Teddybear',
+                    'Cotton_Candy',
+                    'Jelly_Beans',
+                    'Hot_Cocoa',
+                    'Green_Tea'
+                ],*/
+            };
+
+            var max = [];
+            var min = [];
+            var i;
+            var index;
+            var buildKeys = Object.keys(build);
+
+            for (i = 0; i < buildKeys.length; i += 1) {
+                index = buildKeys[i];
+                min.push(0);
+                max.push(build[index].length - 1);
+                //min.push(Object.keys(build[index])[0]);
+                //max.push(Object.keys(build[index])[build[index].length - 1]);
+            }
+
+            //console.log(min);
+            //console.log(max);
+
+            var count = 0;
+            var depth = 0;
+            var maxDepth = min.length - 1;
+            var j = min;
+            currentBanner = "";
+            var path;
+
+            function recursiveNestedLoop(nestDepth, currentBanner) {
+
+                if (nestDepth <= maxDepth) {
+
+                    j[nestDepth] = 0;
+
+                    for (j[nestDepth] = min[nestDepth]; j[nestDepth] <= max[nestDepth]; j[nestDepth] += 1) {
+
+                        recursiveNestedLoop(nestDepth + 1, currentBanner + j[nestDepth]);
+
+                    }
+                } else {
+
+                    count += 1;
+                    console.log(currentBanner);
+
+                    path = root;
+                    for (i = 0; i < buildKeys.length; i += 1) {
+                        path += build[buildKeys[i]][currentBanner[i]] + "/";
+                    }
+
+                    console.log(path);
+                }
+            }
+
+            recursiveNestedLoop(depth, currentBanner);
+            console.log("\nPermutation Count: " + count);
+        });
+    </script>
+</body>
+
+</html>
